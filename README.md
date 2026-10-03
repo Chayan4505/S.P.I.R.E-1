@@ -1,4 +1,4 @@
-# 🌾 S.P.I.N.E. - Soil Precision & Intelligent Robotic Ecosystem
+# 🌾 S.P.I.R.E. - Soil Precision & Intelligent Robotic Ecosystem
 
 **Hackspire-26** | IoT-powered soil monitoring and automated irrigation system with AI-driven crop recommendations
 
