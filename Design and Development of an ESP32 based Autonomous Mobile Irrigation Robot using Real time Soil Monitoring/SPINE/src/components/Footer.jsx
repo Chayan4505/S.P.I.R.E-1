@@ -1,0 +1,58 @@
+import { footerLinks } from '../assets/Data';
+import { motion } from 'framer-motion';
+import logo from "../assets/logo.png"
+
+export default function Footer() {
+
+    return (
+        <motion.footer className="bg-white/18 border-t border-black/6 pt-10 rounded-t-4xl text-gray-300"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", duration: 0.5 }}
+        >
+            <div className="max-w-6xl mx-auto px-6">
+                <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-white/10">
+                    <div>
+                        <img src={logo} alt="logo" className="h-12 cursor-pointer" />
+                        <p className="max-w-102.5 mt-6 text-sm leading-relaxed text-gray-800">
+                            S.P.I.R.E. combines robotics, real-time soil intelligence, and autonomous irrigation to help transform traditional farming into a smarter, data-driven, and sustainable process.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
+                        {footerLinks.map((section, index) => (
+                            <div key={index}>
+                                <h2 className="font-semibold text-base text-black md:mb-5 mb-2">
+                                    {section.title}
+                                </h2>
+                                <ul className="text-sm space-y-2">
+                                    {section.links.map(
+                                        (link, i) => (
+                                            <li key={i}>
+                                                <a
+                                                    href={link.url}
+                                                    className="text-gray-800 hover:text-green-500 transition"
+                                                >
+                                                    {link.name}
+                                                </a>
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <p className="py-4 text-center text-sm text-green-500">
+                    © {new Date().getFullYear()} {' '}
+                    <a href="#">
+                        S.P.I.R.E
+                    </a>
+                    . All rights reserved.
+                </p>
+            </div>
+        </motion.footer>
+    );
+};
